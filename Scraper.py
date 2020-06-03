@@ -7,11 +7,10 @@ from splinter import Browser
 username = 'bigchungy42069'
 password = 'ClearlyInventory2020!'
 hashtag = 'trucks'
-DriverPath = r'C:\Users\sfbow\Desktop\chromedriver' #the file location of the chromium driver
 hashtagpage = 'https://www.instagram.com/explore/tags/{}'.format(hashtag)
 
 #Browser stuff
-executable_path = {'executable_path': DriverPath}
+executable_path = {'executable_path': r'C:\Users\sfbow\Desktop'}
 browser = Browser('chrome', **executable_path, headless = False)
 
 #URL components
