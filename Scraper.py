@@ -1,8 +1,7 @@
 import time
 import urllib
 import requests
-from splinter import Browser
-
+import splinter
 
 username = 'bigchungy42069'
 password = 'ClearlyInventory2020!'
@@ -10,8 +9,8 @@ hashtag = 'trucks'
 hashtagpage = 'https://www.instagram.com/explore/tags/{}'.format(hashtag)
 
 #Browser stuff
-executable_path = {'executable_path': r'C:\Users\sfbow\Desktop'}
-browser = Browser('chrome', **executable_path, headless = False)
+executable_path = {'executable_path': r'C:\Users\sfbow\Desktop\chromedriver'}
+browser = splinter.Browser('chrome', **executable_path, headless = False)
 
 #URL components
 method = 'GET'
@@ -33,16 +32,18 @@ browser.find_by_text("Not Now").first.click()
 time.sleep(2)
 #go to hashtag page
 browser.visit(hashtagpage)
-
 links = []
-tags = browser.links.find_by_partial_href('/p/')
-for x in tags:
-    links.append(x['href'])
 
-for x in links:
-    browser.visit(x)
-    try:
-        browser.find_by_text('Follow').first.click()
-    except:
-        print('Already Followed')
-    time.sleep(5)
+while True:
+    browser.execute_script("window.scrollTo(0, -document.body.scrollHeight);")
+    tags = browser.links.find_by_partial_href('/p/')
+    for x in tags:
+        links.append(x['href'])
+    print(len(links))
+    """ for x in links:
+        browser.visit(x)
+        try:
+            browser.find_by_text('Follow').first.click()
+        except:
+            print('Already Followed') """
+        
