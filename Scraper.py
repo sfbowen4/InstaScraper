@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup as b
 import time
 import login
-import getpages 
+import getpages
 
 username = 'cordlove.organizer'
 password = 'ClearlyInventory2020!'
