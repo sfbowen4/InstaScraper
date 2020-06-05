@@ -3,8 +3,9 @@ import urllib
 import requests
 import splinter
 import random
+import SuggestedScraper
 
-username = 'bigchungy420692.0'
+username = 'bigchungy420693.0'
 password = 'ClearlyInventory2020!'
 
 #username = 'cordlove.organizer'
@@ -16,7 +17,7 @@ HashTagCounter = 0
 hashtagpage = 'https://www.instagram.com/explore/tags/{}'.format(hashtag)
 
 #Browser stuff
-executable_path = {'executable_path': r'/Users/stephen/Desktop/chromedriver'}
+executable_path = {'executable_path': r'C:\Users\sfbow\Desktop\chromedriver'}
 browser = splinter.Browser('chrome', **executable_path, headless = False)
 
 #URL components
@@ -58,6 +59,7 @@ while True:
             if browser.is_text_present('Following') == True:
                 browser.find_link_by_text('Next').click()
             else:
+                time.sleep(random.randint(20,60))  
                 FollowToggle.click()
                 try:
                     browser.find_link_by_text('Next').click()
@@ -66,7 +68,6 @@ while True:
                 except:
                     pass
                 print(SessionFollows)
-                time.sleep(random.randint(20,60))  
     except:
         time.sleep(30)
         print('Ran into connection or limit error.')
@@ -77,6 +78,7 @@ while True:
             time.sleep(120)
         elif ErrorCounter >= 2:
             print("2 errors in a row. Waiting 10 minutes.")
+            SuggestedScraper.SuggestedScrape()
             time.sleep(600)
             ErrorCounter = 0
 
