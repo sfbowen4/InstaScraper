@@ -5,11 +5,8 @@ import splinter
 import random
 import SuggestedScraper
 
-username = 'bigchungy420693.0'
-password = 'ClearlyInventory2020!'
-
-#username = 'cordlove.organizer'
-#password = 'ClearlyInventory2020!'
+username = 
+password = 
 
 hashtag = ['Laptop','Creativity','styleinspiration','styleoftheday','stylegram','styled','styleformen','styleguide','styleaddict','stylebloggers','styleicon','stylemen','stylelife','technology','techno','techie','technique','techy','technics','technical','technopreneur','techlife','techstartup','technolove','technician','techies','technologies','techgeek','technolovers']
 print(len(hashtag))
