@@ -5,11 +5,11 @@ import splinter
 import random
 
 def SuggestedScrape():
-    username = 'bigchungy420692.0'
-    password = 'ClearlyInventory2020!'
+    username = 
+    password = 
 
-    #username = 'cordlove.organizer'
-    #password = 'ClearlyInventory2020!'
+    #username = 
+    #password = 
 
     #Browser stuff
     """ profile = {
